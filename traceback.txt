@@ -1,28 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 156, in script
-    return;
-SyntaxError: unexpected EOF while parsing (game/script.rpy, line 156)
+  File "game/script.rpy", line 288, in script
+    jump expression story.get(current_node)
+ScriptError: could not find label 'scene2A1A'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 156, in script
-    return;
-  File "C:\Personal\Code\Renpy\renpy-8.2.3-sdk\renpy\ast.py", line 1481, in execute
-    renpy.store._return = renpy.python.py_eval(self.expression)
-  File "C:\Personal\Code\Renpy\renpy-8.2.3-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Personal\Code\Renpy\renpy-8.2.3-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "C:\Personal\Code\Renpy\renpy-8.2.3-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Personal\Code\Renpy\renpy-8.2.3-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: unexpected EOF while parsing (game/script.rpy, line 156)
+  File "game/script.rpy", line 288, in script
+    jump expression story.get(current_node)
+  File "C:\Users\haeri\Downloads\Programs\renpy-8.2.1-sdk\renpy\ast.py", line 1698, in execute
+    rv = renpy.game.script.lookup(target)
+  File "C:\Users\haeri\Downloads\Programs\renpy-8.2.1-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'scene2A1A'.
 
 Windows-10-10.0.22631 AMD64
-Ren'Py 8.2.3.24061702
+Ren'Py 8.2.1.24030407
 Ambasuke Simulator 1.0
-Wed Jun 19 20:08:10 2024
+Thu Jun 20 19:58:00 2024

@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 77: expected menuitem
-    show jaka ss at left
-    ^
+The label goodending3 is defined twice, at File "game/script.rpy", line 357:
+label goodending3:
+and File "game/script.rpy", line 384:
+label goodending3:
+
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Jun 20 10:42:04 2024
+Thu Jun 20 21:39:01 2024
