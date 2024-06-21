@@ -254,6 +254,7 @@ label scene1A2:
             jump expression story.get(current_node)
 
 label scene1A2A: #Good Ending 2
+    show bg sky
     e "Jaka terbang tinggi ke langit, menjelajahi dunia dari atas. Pemandangan yang ia lihat sangat menakjubkan; gunung, lautan, dan kota-kota terlihat begitu kecil dari ketinggian."
     e "Jaka merasa sangat bebas dan bahagia, melayang di udara seperti burung."
     characterSampingan "Ini luar biasa! Aku bisa melihat seluruh dunia dari sini!"
@@ -265,23 +266,11 @@ label scene1A2A: #Good Ending 2
     $ current_node = 33
     jump expression story.get(current_node)
 
-
-label scene1A2B: #Good Ending 2
-    e "Jaka terbang rendah, menikmati sensasi terbang di dekat tanah. Ia merasakan angin di wajahnya dan melihat detail pemandangan dengan lebih jelas."
-    characterSampingan "Aku harus mendarat dengan hati-hati."
-    e "Jaka mencari tempat yang aman untuk mendarat. Setelah menemukan lapangan terbuka, dia mendarat dengan lembut."
-    e "Sayap ajaibnya menghilang dengan perlahan, dan Jaka merasa sangat puas dengan petualangan terbangnya."
-    kucing "Apakah kamu menikmati terbang, Jaka?"
-    characterSampingan "Sangat! Itu pengalaman yang luar biasa. Terima kasih banyak!"
-    e "Jaka pulang dengan hati yang penuh kebahagiaan. Dia tahu bahwa dia bisa menghadapi apa saja dengan keajaiban yang telah ia alami."
-    e "Jaka tersenyum dan berpikir tentang petualangan-petualangan seru lainnya yang mungkin akan ia hadapi di masa depan."
-    $ current_node = 33
-    jump expression story.get(current_node)
-
 label scene1B1:
+    show bg goodending2b
     kucing "Betul! Layang-layang punya ekor tapi bukan hewan. Ayo, ikut aku!"
     e "Tom membawa Jaka ke sebuah pintu yang bisa membawanya pulang ke rumah."
-    e " meJaka memasang sayap tersebut dan tiba-tiba dia bisa terbang seperti burung."
+    e " Jaka memasang sayap tersebut dan tiba-tiba dia bisa terbang seperti burung."
     menu:
         "Jaka pulang ke rumah dan membawa pulang Miau sebagai teman.":
             $ current_node = 19
@@ -292,9 +281,13 @@ label scene1B1:
             jump expression story.get(current_node)
 
 label scene1B1A: #Canon Ending 1
+    show bg goodending2bs
     e "Jaka memutuskan untuk pulang ke rumah. Sebelum pergi, kucing itu memberikan Miau, seekor kucing kecil yang lucu, sebagai teman."
     characterSampingan "Terima kasih atas semuanya! Aku akan merindukan tempat ini, tapi aku senang bisa membawa Miau bersamaku."
     kucing "Jangan khawatir, Jaka. Kamu selalu bisa kembali ke Dunia Lucu kapan saja."
+    hide bg goodending2bs
+
+    show bg portal
     e "Jaka berjalan melalui pintu dan tiba-tiba dia berada di kamarnya sendiri. Miau mengikuti di belakangnya."
     e "Dengan Miau di sisinya, Jaka merasa lebih bahagia dan tidak pernah merasa kesepian lagi. Mereka berdua menjadi sahabat yang tak terpisahkan."
     e "Setiap kali Jaka ingin petualangan baru, ia tahu bahwa Dunia Lucu selalu menunggunya."
@@ -303,6 +296,7 @@ label scene1B1A: #Canon Ending 1
     jump expression story.get(current_node)
 
 label scene1B1B: #Secret Ending 1
+    show bg secret1s
     e "Jaka memutuskan untuk tinggal lebih lama di Dunia Lucu. Tempat itu penuh dengan keajaiban dan petualangan yang tak ada habisnya."
     characterSampingan "Aku ingin menjelajahi lebih banyak tempat di Dunia Lucu. Terlalu banyak yang belum aku lihat."
     kucing "Bagus sekali, Jaka! Mari kita mulai petualangan baru!"
@@ -316,7 +310,10 @@ label scene1B1B: #Secret Ending 1
 
 
 label scene1B2:
+    show bg lushforest
+    show tom samurai
     kucing "Salah! Tapi tidak apa-apa, kamu masih punya satu kesempatan lagi. Apa yang selalu di depanmu tetapi tidak pernah bisa kamu lihat?"
+    hide tom samurai
     menu:
         "Masa depan":
             $ current_node = 21
@@ -327,22 +324,34 @@ label scene1B2:
             jump expression story.get(current_node)
 
 label scene1B2A: #Bad Ending 2 
+    show bg dsforest
     e "Jaka berpikir keras dan akhirnya menjawab."
+    show jaka perplexed
     characterSampingan "Masa depan!"
+    hide jaka perplexed
+    show tom samurai
     kucing "Salah lagi, Jaka! Jawabannya bukan itu."
+    hide tom samurai
     e "Tiba-tiba, lantai di bawah Jaka terbuka dan dia jatuh ke dalam kegelapan yang dalam."
+    show jaka ss
     characterSampingan "Aaaahhh!"
+    hide jaka ss
     e "Jaka terjebak di dunia yang suram dan penuh dengan ketakutan. Dia mencoba mencari jalan keluar, tapi setiap langkah hanya membawanya lebih dalam ke dalam kegelapan."
     e "Meski berusaha keras, Jaka tidak bisa menemukan jalan kembali ke dunia nyata. Dia terjebak selamanya dalam dunia teka-teki yang tak berujung."
     $ current_node = 36
     jump expression story.get(current_node)
 
 label scene1B2B: #Good Ending 3
+    show bg good3s
     e "Jaka berpikir keras dan akhirnya menjawab."
+    show jaka question
     characterSampingan "Bayangan!"
+    hide jaka question
+    show tom samurai
     kucing "Betul sekali! Kamu memang pintar, Jaka."
     e "Pintu besar muncul di depan Jaka, memancarkan cahaya terang yang menyilaukan."
     kucing "Lewat pintu ini, kamu bisa kembali ke rumah."
+    hide tom samurai
     e "Jaka tersenyum lega dan melangkah melalui pintu. Seketika, dia menemukan dirinya kembali di kamarnya, aman dan sehat."
     characterSampingan "Terima kasih, kucing! Aku tidak akan melupakan petualangan ini."
     e "Dengan kenangan indah dari Dunia Lucu, Jaka menjalani hari-harinya dengan lebih ceria dan penuh semangat. Dia tahu bahwa kapan saja dia merasa bosan atau kesepian, petualangan selalu menunggunya di suatu tempat yang ajaib."
@@ -350,7 +359,10 @@ label scene1B2B: #Good Ending 3
     jump expression story.get(current_node)
 
 label scene2A1:
+    show bg lushforest
+    show grood idle
     pohon "Ayo, mari kita menari!"
+    hide groot idle
     e "Jaka dan Groot mulai menari bersama dan Jaka merasa sangat senang, ternyata menari dengan pohon sangat menyenangkan."
     menu:
         "Jaka ingin terus menari dengan Groot.":
@@ -516,35 +528,35 @@ label badending1:
     #32 gambar 1A1B
     
 label goodending2: #33
-    show bg witcher
+    show bg goodending2
     e "Good Ending 2"
     with fade
     return
     #gambar goodending 1A2A & 1A2B
 
 label canonending1: #34
-    show bg witcher
+    show bg canon1
     e "Canon Ending 1"
     with fade
     return
     #gambar canonending 1B1A
 
 label secretending1: #35
-    show bg witcher
+    show bg secret1
     e "Secret Ending 1"
     with fade
     return
     #gambar secretending1B1B
 
 label badending2: #36
-    show bg witcher
+    show bg bad2
     e "Bad Ending 2"
     with fade
     return
     #gambar bad ending 1B2A
 
 label goodending3: #37  
-    show bg witcher
+    show bg good3
     e "Good Ending 3"
     with fade
     return
